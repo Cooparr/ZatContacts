@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>289256062517-i8tkuslgtue5j82cqnc5b6an1j6rp416.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.289256062517-i8tkuslgtue5j82cqnc5b6an1j6rp416</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAuESxYYWETDfYAJ3dl4yMTe0M4sI0P-5k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>289256062517</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.alexandercooper.ZatContacts</string>
+	<key>PROJECT_ID</key>
+	<string>zatcontacts</string>
+	<key>STORAGE_BUCKET</key>
+	<string>zatcontacts.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:289256062517:ios:933c9b59fdd9347d657b7c</string>
+</dict>
+</plist>

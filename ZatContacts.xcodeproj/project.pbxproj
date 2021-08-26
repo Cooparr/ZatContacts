@@ -3,18 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D89E0F28FC131C0F7F5EEC0 /* Pods_ZatContactsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB834F51819C5C6CC346AA9 /* Pods_ZatContactsTests.framework */; };
+		1E0867E026D4FBDC002F43FE /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0867DF26D4FBDC002F43FE /* FirebaseManager.swift */; };
+		1E0867E526D507E8002F43FE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0867E426D507E8002F43FE /* Constants.swift */; };
+		1E0867E826D51185002F43FE /* ZCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0867E726D51185002F43FE /* ZCTextField.swift */; };
+		1E0867EC26D51988002F43FE /* AddContactForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E0867EB26D51988002F43FE /* AddContactForm.storyboard */; };
 		1E0BE9E026D47BA100F0E518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BE9DF26D47BA100F0E518 /* AppDelegate.swift */; };
 		1E0BE9E226D47BA100F0E518 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BE9E126D47BA100F0E518 /* SceneDelegate.swift */; };
-		1E0BE9E426D47BA100F0E518 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BE9E326D47BA100F0E518 /* ViewController.swift */; };
-		1E0BE9E726D47BA100F0E518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BE9E526D47BA100F0E518 /* Main.storyboard */; };
+		1E0BE9E426D47BA100F0E518 /* ListContactsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BE9E326D47BA100F0E518 /* ListContactsVC.swift */; };
 		1E0BE9E926D47BA200F0E518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BE9E826D47BA200F0E518 /* Assets.xcassets */; };
 		1E0BE9EC26D47BA200F0E518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E0BE9EA26D47BA200F0E518 /* LaunchScreen.storyboard */; };
-		1E0BE9F726D47BA200F0E518 /* ZatContactsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BE9F626D47BA200F0E518 /* ZatContactsTests.swift */; };
-		1E0BEA0226D47BA200F0E518 /* ZatContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0BEA0126D47BA200F0E518 /* ZatContactsUITests.swift */; };
+		1E3A495C26D47CFF000430CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A495B26D47CFF000430CF /* GoogleService-Info.plist */; };
+		1E54043D26D48CD600801463 /* ListContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54043C26D48CD600801463 /* ListContactsView.swift */; };
+		1E54043F26D494CF00801463 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54043E26D494CF00801463 /* ContactCell.swift */; };
+		1E54044126D49A0600801463 /* DetailedContactVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E54044026D49A0600801463 /* DetailedContactVC.swift */; };
+		1E56E30E26D7A25200A6BF98 /* ZCErrorAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E56E30D26D7A25200A6BF98 /* ZCErrorAlertView.swift */; };
+		1EB3FB2026D83770001659BC /* AddContactVCStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3FB1E26D83770001659BC /* AddContactVCStoryboard.swift */; };
+		1EB3FB2126D83770001659BC /* AddContactVCProgrammatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3FB1F26D83770001659BC /* AddContactVCProgrammatic.swift */; };
+		1EB3FB2826D83876001659BC /* AddContactProgrammaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3FB2726D83876001659BC /* AddContactProgrammaticView.swift */; };
+		1EB3FB2B26D83CDA001659BC /* ZCTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3FB2A26D83CDA001659BC /* ZCTextFieldCell.swift */; };
+		1EB3FB2D26D83D3C001659BC /* ZCSalutationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3FB2C26D83D3C001659BC /* ZCSalutationCell.swift */; };
+		1EB3FB2F26D83DC1001659BC /* ZCBirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB3FB2E26D83DC1001659BC /* ZCBirthdayCell.swift */; };
+		1EE5766F26D482E400DA5871 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5766E26D482E400DA5871 /* Contact.swift */; };
+		1EF145A526D5CB69005B36B3 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145A426D5CB69005B36B3 /* ValidationService.swift */; };
+		1EF145A826D5E754005B36B3 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145A726D5E754005B36B3 /* UIViewController.swift */; };
+		1EF145AA26D5E89D005B36B3 /* ZCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145A926D5E89D005B36B3 /* ZCButton.swift */; };
+		1EF145AD26D5E925005B36B3 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145AC26D5E925005B36B3 /* UIView.swift */; };
+		1EF145B226D5E9B0005B36B3 /* ZCAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145B126D5E9B0005B36B3 /* ZCAlertContainerView.swift */; };
+		1EF145B526D5EA26005B36B3 /* ZCErrorAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145B426D5EA26005B36B3 /* ZCErrorAlertVC.swift */; };
+		1EF145B726D5EBAD005B36B3 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145B626D5EBAD005B36B3 /* UIFont.swift */; };
+		1EF145B926D66C19005B36B3 /* DetailedContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145B826D66C19005B36B3 /* DetailedContactView.swift */; };
+		1EF145BB26D66C73005B36B3 /* ZCContactInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145BA26D66C73005B36B3 /* ZCContactInfoCard.swift */; };
+		1EF145C726D6CA29005B36B3 /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145C626D6CA29005B36B3 /* ValidationServiceTest.swift */; };
+		1EF145CC26D74109005B36B3 /* ZCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145CB26D74109005B36B3 /* ZCLabel.swift */; };
+		295AA7F26E9815811C5346AC /* Pods_ZatContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5A3D4F1A593B623DBBF634 /* Pods_ZatContacts.framework */; };
+		A5AF9893A632647698313CCF /* Pods_ZatContacts_ZatContactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62659B2443A90205B0DF2DB7 /* Pods_ZatContacts_ZatContactsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +62,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0013FA92C887BE98E67172E4 /* Pods-ZatContacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContacts.release.xcconfig"; path = "Target Support Files/Pods-ZatContacts/Pods-ZatContacts.release.xcconfig"; sourceTree = "<group>"; };
+		1DB834F51819C5C6CC346AA9 /* Pods_ZatContactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatContactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E0867DF26D4FBDC002F43FE /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		1E0867E426D507E8002F43FE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1E0867E726D51185002F43FE /* ZCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCTextField.swift; sourceTree = "<group>"; };
+		1E0867EB26D51988002F43FE /* AddContactForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddContactForm.storyboard; sourceTree = "<group>"; };
 		1E0BE9DC26D47BA100F0E518 /* ZatContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZatContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E0BE9DF26D47BA100F0E518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E0BE9E126D47BA100F0E518 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1E0BE9E326D47BA100F0E518 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1E0BE9E626D47BA100F0E518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E0BE9E326D47BA100F0E518 /* ListContactsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsVC.swift; sourceTree = "<group>"; };
 		1E0BE9E826D47BA200F0E518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E0BE9EB26D47BA200F0E518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E0BE9ED26D47BA200F0E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E0BE9F226D47BA200F0E518 /* ZatContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E0BE9F626D47BA200F0E518 /* ZatContactsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatContactsTests.swift; sourceTree = "<group>"; };
 		1E0BE9F826D47BA200F0E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E0BE9FD26D47BA200F0E518 /* ZatContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E0BEA0126D47BA200F0E518 /* ZatContactsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZatContactsUITests.swift; sourceTree = "<group>"; };
-		1E0BEA0326D47BA200F0E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E3A495B26D47CFF000430CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1E54043C26D48CD600801463 /* ListContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsView.swift; sourceTree = "<group>"; };
+		1E54043E26D494CF00801463 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
+		1E54044026D49A0600801463 /* DetailedContactVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedContactVC.swift; sourceTree = "<group>"; };
+		1E56E30D26D7A25200A6BF98 /* ZCErrorAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCErrorAlertView.swift; sourceTree = "<group>"; };
+		1EB3FB1E26D83770001659BC /* AddContactVCStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactVCStoryboard.swift; sourceTree = "<group>"; };
+		1EB3FB1F26D83770001659BC /* AddContactVCProgrammatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactVCProgrammatic.swift; sourceTree = "<group>"; };
+		1EB3FB2726D83876001659BC /* AddContactProgrammaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactProgrammaticView.swift; sourceTree = "<group>"; };
+		1EB3FB2A26D83CDA001659BC /* ZCTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCTextFieldCell.swift; sourceTree = "<group>"; };
+		1EB3FB2C26D83D3C001659BC /* ZCSalutationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCSalutationCell.swift; sourceTree = "<group>"; };
+		1EB3FB2E26D83DC1001659BC /* ZCBirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCBirthdayCell.swift; sourceTree = "<group>"; };
+		1EE5766E26D482E400DA5871 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		1EF145A426D5CB69005B36B3 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		1EF145A726D5E754005B36B3 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		1EF145A926D5E89D005B36B3 /* ZCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCButton.swift; sourceTree = "<group>"; };
+		1EF145AC26D5E925005B36B3 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		1EF145B126D5E9B0005B36B3 /* ZCAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCAlertContainerView.swift; sourceTree = "<group>"; };
+		1EF145B426D5EA26005B36B3 /* ZCErrorAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCErrorAlertVC.swift; sourceTree = "<group>"; };
+		1EF145B626D5EBAD005B36B3 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		1EF145B826D66C19005B36B3 /* DetailedContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedContactView.swift; sourceTree = "<group>"; };
+		1EF145BA26D66C73005B36B3 /* ZCContactInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCContactInfoCard.swift; sourceTree = "<group>"; };
+		1EF145C626D6CA29005B36B3 /* ValidationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
+		1EF145CB26D74109005B36B3 /* ZCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCLabel.swift; sourceTree = "<group>"; };
+		62659B2443A90205B0DF2DB7 /* Pods_ZatContacts_ZatContactsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatContacts_ZatContactsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AB07F6D69B54993FFD5C8BA /* Pods-ZatContactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContactsTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatContactsTests/Pods-ZatContactsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9757DE7B8C1E9EAE626C039A /* Pods-ZatContacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContacts.debug.xcconfig"; path = "Target Support Files/Pods-ZatContacts/Pods-ZatContacts.debug.xcconfig"; sourceTree = "<group>"; };
+		BEA84F60B6364ACB0FA667BC /* Pods-ZatContacts-ZatContactsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContacts-ZatContactsUITests.debug.xcconfig"; path = "Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C1A9AE3F43A4F1466AE44EF2 /* Pods-ZatContactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContactsTests.release.xcconfig"; path = "Target Support Files/Pods-ZatContactsTests/Pods-ZatContactsTests.release.xcconfig"; sourceTree = "<group>"; };
+		ED726D1137071CCF554F790F /* Pods-ZatContacts-ZatContactsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContacts-ZatContactsUITests.release.xcconfig"; path = "Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EE5A3D4F1A593B623DBBF634 /* Pods_ZatContacts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatContacts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295AA7F26E9815811C5346AC /* Pods_ZatContacts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D89E0F28FC131C0F7F5EEC0 /* Pods_ZatContactsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +131,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AF9893A632647698313CCF /* Pods_ZatContacts_ZatContactsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E0867DE26D4F66C002F43FE /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				1E3A495B26D47CFF000430CF /* GoogleService-Info.plist */,
+				1E0867DF26D4FBDC002F43FE /* FirebaseManager.swift */,
+				1EF145A426D5CB69005B36B3 /* ValidationService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		1E0867E326D507D3002F43FE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1E0867E426D507E8002F43FE /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		1E0BE9D326D47BA100F0E518 = {
 			isa = PBXGroup;
 			children = (
 				1E0BE9DE26D47BA100F0E518 /* ZatContacts */,
 				1E0BE9F526D47BA200F0E518 /* ZatContactsTests */,
-				1E0BEA0026D47BA200F0E518 /* ZatContactsUITests */,
 				1E0BE9DD26D47BA100F0E518 /* Products */,
+				9065FBCD06BDA75D6BFB4F88 /* Pods */,
+				F6006C1CD6573894DFCE47CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +182,14 @@
 			children = (
 				1E0BE9DF26D47BA100F0E518 /* AppDelegate.swift */,
 				1E0BE9E126D47BA100F0E518 /* SceneDelegate.swift */,
-				1E0BE9E326D47BA100F0E518 /* ViewController.swift */,
-				1E0BE9E526D47BA100F0E518 /* Main.storyboard */,
 				1E0BE9E826D47BA200F0E518 /* Assets.xcassets */,
 				1E0BE9EA26D47BA200F0E518 /* LaunchScreen.storyboard */,
 				1E0BE9ED26D47BA200F0E518 /* Info.plist */,
+				1EF145C426D66DCE005B36B3 /* Contacts */,
+				1EF145AB26D5E8D6005B36B3 /* Custom Views */,
+				1E0867DE26D4F66C002F43FE /* Firebase */,
+				1E0867E326D507D3002F43FE /* Utilities */,
+				1EF145A626D5E746005B36B3 /* Extensions */,
 			);
 			path = ZatContacts;
 			sourceTree = "<group>";
@@ -113,19 +197,237 @@
 		1E0BE9F526D47BA200F0E518 /* ZatContactsTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E0BE9F626D47BA200F0E518 /* ZatContactsTests.swift */,
+				1EF145C626D6CA29005B36B3 /* ValidationServiceTest.swift */,
 				1E0BE9F826D47BA200F0E518 /* Info.plist */,
 			);
 			path = ZatContactsTests;
 			sourceTree = "<group>";
 		};
-		1E0BEA0026D47BA200F0E518 /* ZatContactsUITests */ = {
+		1E56E30C26D7A23F00A6BF98 /* Error Alert */ = {
 			isa = PBXGroup;
 			children = (
-				1E0BEA0126D47BA200F0E518 /* ZatContactsUITests.swift */,
-				1E0BEA0326D47BA200F0E518 /* Info.plist */,
+				1EF145B426D5EA26005B36B3 /* ZCErrorAlertVC.swift */,
+				1E56E30D26D7A25200A6BF98 /* ZCErrorAlertView.swift */,
 			);
-			path = ZatContactsUITests;
+			path = "Error Alert";
+			sourceTree = "<group>";
+		};
+		1E5FFDEF26D835F400CAD4C0 /* Storyboard Version */ = {
+			isa = PBXGroup;
+			children = (
+				1ECE588326D48788009DA86B /* Views */,
+				1EB3FB1D26D836A1001659BC /* Controllers */,
+			);
+			path = "Storyboard Version";
+			sourceTree = "<group>";
+		};
+		1EB3FB1D26D836A1001659BC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3FB1E26D83770001659BC /* AddContactVCStoryboard.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1EB3FB2226D837D3001659BC /* Programmatic Version */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3FB2426D837F0001659BC /* Views */,
+				1EB3FB2326D837E7001659BC /* Controller */,
+			);
+			path = "Programmatic Version";
+			sourceTree = "<group>";
+		};
+		1EB3FB2326D837E7001659BC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3FB1F26D83770001659BC /* AddContactVCProgrammatic.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1EB3FB2426D837F0001659BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3FB2726D83876001659BC /* AddContactProgrammaticView.swift */,
+				1EB3FB2926D83CCA001659BC /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EB3FB2926D83CCA001659BC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3FB2A26D83CDA001659BC /* ZCTextFieldCell.swift */,
+				1EB3FB2C26D83D3C001659BC /* ZCSalutationCell.swift */,
+				1EB3FB2E26D83DC1001659BC /* ZCBirthdayCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1ECE588326D48788009DA86B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E0867EB26D51988002F43FE /* AddContactForm.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EF145A626D5E746005B36B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145A726D5E754005B36B3 /* UIViewController.swift */,
+				1EF145AC26D5E925005B36B3 /* UIView.swift */,
+				1EF145B626D5EBAD005B36B3 /* UIFont.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1EF145AB26D5E8D6005B36B3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E56E30C26D7A23F00A6BF98 /* Error Alert */,
+				1EF145CA26D740F7005B36B3 /* Labels */,
+				1EF145B026D5E999005B36B3 /* Views */,
+				1EF145AF26D5E990005B36B3 /* TextField */,
+				1EF145AE26D5E98A005B36B3 /* Buttons */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		1EF145AE26D5E98A005B36B3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145A926D5E89D005B36B3 /* ZCButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		1EF145AF26D5E990005B36B3 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				1E0867E726D51185002F43FE /* ZCTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		1EF145B026D5E999005B36B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145B126D5E9B0005B36B3 /* ZCAlertContainerView.swift */,
+				1EF145BA26D66C73005B36B3 /* ZCContactInfoCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EF145BC26D66CCF005B36B3 /* List Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145C326D66DB8005B36B3 /* Controllers */,
+				1EF145C226D66DB3005B36B3 /* Views */,
+			);
+			path = "List Contacts";
+			sourceTree = "<group>";
+		};
+		1EF145BD26D66D10005B36B3 /* Display Contact */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145C126D66DA8005B36B3 /* Views */,
+				1EF145BF26D66D6B005B36B3 /* Controllers */,
+			);
+			path = "Display Contact";
+			sourceTree = "<group>";
+		};
+		1EF145BE26D66D3A005B36B3 /* Manage Contact */ = {
+			isa = PBXGroup;
+			children = (
+				1EB3FB2226D837D3001659BC /* Programmatic Version */,
+				1E5FFDEF26D835F400CAD4C0 /* Storyboard Version */,
+			);
+			path = "Manage Contact";
+			sourceTree = "<group>";
+		};
+		1EF145BF26D66D6B005B36B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E54044026D49A0600801463 /* DetailedContactVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1EF145C126D66DA8005B36B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145B826D66C19005B36B3 /* DetailedContactView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EF145C226D66DB3005B36B3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E54043C26D48CD600801463 /* ListContactsView.swift */,
+				1E54043E26D494CF00801463 /* ContactCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1EF145C326D66DB8005B36B3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1E0BE9E326D47BA100F0E518 /* ListContactsVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1EF145C426D66DCE005B36B3 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145C526D66DE5005B36B3 /* Models */,
+				1EF145BC26D66CCF005B36B3 /* List Contacts */,
+				1EF145BE26D66D3A005B36B3 /* Manage Contact */,
+				1EF145BD26D66D10005B36B3 /* Display Contact */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		1EF145C526D66DE5005B36B3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1EE5766E26D482E400DA5871 /* Contact.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1EF145CA26D740F7005B36B3 /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				1EF145CB26D74109005B36B3 /* ZCLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		9065FBCD06BDA75D6BFB4F88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9757DE7B8C1E9EAE626C039A /* Pods-ZatContacts.debug.xcconfig */,
+				0013FA92C887BE98E67172E4 /* Pods-ZatContacts.release.xcconfig */,
+				BEA84F60B6364ACB0FA667BC /* Pods-ZatContacts-ZatContactsUITests.debug.xcconfig */,
+				ED726D1137071CCF554F790F /* Pods-ZatContacts-ZatContactsUITests.release.xcconfig */,
+				8AB07F6D69B54993FFD5C8BA /* Pods-ZatContactsTests.debug.xcconfig */,
+				C1A9AE3F43A4F1466AE44EF2 /* Pods-ZatContactsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F6006C1CD6573894DFCE47CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE5A3D4F1A593B623DBBF634 /* Pods_ZatContacts.framework */,
+				62659B2443A90205B0DF2DB7 /* Pods_ZatContacts_ZatContactsUITests.framework */,
+				1DB834F51819C5C6CC346AA9 /* Pods_ZatContactsTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,9 +437,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E0BEA0626D47BA200F0E518 /* Build configuration list for PBXNativeTarget "ZatContacts" */;
 			buildPhases = (
+				C88804172BB8FAEC9A63BAB5 /* [CP] Check Pods Manifest.lock */,
 				1E0BE9D826D47BA100F0E518 /* Sources */,
 				1E0BE9D926D47BA100F0E518 /* Frameworks */,
 				1E0BE9DA26D47BA100F0E518 /* Resources */,
+				E3F6892103DF1F48E1391768 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +456,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E0BEA0926D47BA200F0E518 /* Build configuration list for PBXNativeTarget "ZatContactsTests" */;
 			buildPhases = (
+				152401133441B7836F5E9B0C /* [CP] Check Pods Manifest.lock */,
 				1E0BE9EE26D47BA200F0E518 /* Sources */,
 				1E0BE9EF26D47BA200F0E518 /* Frameworks */,
 				1E0BE9F026D47BA200F0E518 /* Resources */,
@@ -170,9 +475,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E0BEA0C26D47BA200F0E518 /* Build configuration list for PBXNativeTarget "ZatContactsUITests" */;
 			buildPhases = (
+				4BF005BB625CF2E7DDF0A72B /* [CP] Check Pods Manifest.lock */,
 				1E0BE9F926D47BA200F0E518 /* Sources */,
 				1E0BE9FA26D47BA200F0E518 /* Frameworks */,
 				1E0BE9FB26D47BA200F0E518 /* Resources */,
+				A5B3E8664D6044EA8798128B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -232,8 +539,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E0BE9EC26D47BA200F0E518 /* LaunchScreen.storyboard in Resources */,
+				1E3A495C26D47CFF000430CF /* GoogleService-Info.plist in Resources */,
+				1E0867EC26D51988002F43FE /* AddContactForm.storyboard in Resources */,
 				1E0BE9E926D47BA200F0E518 /* Assets.xcassets in Resources */,
-				1E0BE9E726D47BA100F0E518 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +561,141 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		152401133441B7836F5E9B0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZatContactsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BF005BB625CF2E7DDF0A72B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZatContacts-ZatContactsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5B3E8664D6044EA8798128B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C88804172BB8FAEC9A63BAB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZatContacts-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3F6892103DF1F48E1391768 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZatContacts/Pods-ZatContacts-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZatContacts/Pods-ZatContacts-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZatContacts/Pods-ZatContacts-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E0BE9D826D47BA100F0E518 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E0BE9E426D47BA100F0E518 /* ViewController.swift in Sources */,
+				1E0867E826D51185002F43FE /* ZCTextField.swift in Sources */,
+				1EB3FB2126D83770001659BC /* AddContactVCProgrammatic.swift in Sources */,
+				1E54044126D49A0600801463 /* DetailedContactVC.swift in Sources */,
+				1EF145B226D5E9B0005B36B3 /* ZCAlertContainerView.swift in Sources */,
+				1EF145AA26D5E89D005B36B3 /* ZCButton.swift in Sources */,
+				1E0867E526D507E8002F43FE /* Constants.swift in Sources */,
+				1EB3FB2826D83876001659BC /* AddContactProgrammaticView.swift in Sources */,
+				1EF145CC26D74109005B36B3 /* ZCLabel.swift in Sources */,
+				1EB3FB2B26D83CDA001659BC /* ZCTextFieldCell.swift in Sources */,
+				1E56E30E26D7A25200A6BF98 /* ZCErrorAlertView.swift in Sources */,
+				1E54043F26D494CF00801463 /* ContactCell.swift in Sources */,
+				1EF145B726D5EBAD005B36B3 /* UIFont.swift in Sources */,
+				1EE5766F26D482E400DA5871 /* Contact.swift in Sources */,
+				1E0867E026D4FBDC002F43FE /* FirebaseManager.swift in Sources */,
+				1EF145B926D66C19005B36B3 /* DetailedContactView.swift in Sources */,
+				1EF145B526D5EA26005B36B3 /* ZCErrorAlertVC.swift in Sources */,
+				1E0BE9E426D47BA100F0E518 /* ListContactsVC.swift in Sources */,
 				1E0BE9E026D47BA100F0E518 /* AppDelegate.swift in Sources */,
+				1EF145A526D5CB69005B36B3 /* ValidationService.swift in Sources */,
+				1EF145AD26D5E925005B36B3 /* UIView.swift in Sources */,
+				1E54043D26D48CD600801463 /* ListContactsView.swift in Sources */,
+				1EF145BB26D66C73005B36B3 /* ZCContactInfoCard.swift in Sources */,
+				1EB3FB2F26D83DC1001659BC /* ZCBirthdayCell.swift in Sources */,
 				1E0BE9E226D47BA100F0E518 /* SceneDelegate.swift in Sources */,
+				1EB3FB2D26D83D3C001659BC /* ZCSalutationCell.swift in Sources */,
+				1EB3FB2026D83770001659BC /* AddContactVCStoryboard.swift in Sources */,
+				1EF145A826D5E754005B36B3 /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +703,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E0BE9F726D47BA200F0E518 /* ZatContactsTests.swift in Sources */,
+				1EF145C726D6CA29005B36B3 /* ValidationServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +711,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E0BEA0226D47BA200F0E518 /* ZatContactsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +730,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1E0BE9E526D47BA100F0E518 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1E0BE9E626D47BA100F0E518 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1E0BE9EA26D47BA200F0E518 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,7 +792,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -421,7 +847,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -433,6 +859,7 @@
 		};
 		1E0BEA0726D47BA200F0E518 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9757DE7B8C1E9EAE626C039A /* Pods-ZatContacts.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -452,6 +879,7 @@
 		};
 		1E0BEA0826D47BA200F0E518 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0013FA92C887BE98E67172E4 /* Pods-ZatContacts.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -471,6 +899,7 @@
 		};
 		1E0BEA0A26D47BA200F0E518 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AB07F6D69B54993FFD5C8BA /* Pods-ZatContactsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -493,6 +922,7 @@
 		};
 		1E0BEA0B26D47BA200F0E518 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1A9AE3F43A4F1466AE44EF2 /* Pods-ZatContactsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +945,7 @@
 		};
 		1E0BEA0D26D47BA200F0E518 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEA84F60B6364ACB0FA667BC /* Pods-ZatContacts-ZatContactsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +966,7 @@
 		};
 		1E0BEA0E26D47BA200F0E518 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED726D1137071CCF554F790F /* Pods-ZatContacts-ZatContactsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
