@@ -21,3 +21,17 @@ ZatContact is a simple 'Contacts Book' app, allowing a user to manage contact in
 * Ability to make calls from within app
 * Some example UnitTests for the RegEx validation. 
 * Supports device rotation, dark & light theme.
+
+</br>
+
+## Screenshots
+![Screenshot1][100]
+
+<!-- Image References -->
+[100]: https://i.imgur.com/Alg7YTF.png "Screenshot 1"
+
+
+
+
+
+
