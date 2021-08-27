@@ -72,17 +72,11 @@ class ListContactsVC: UIViewController {
         switch searchText.isEmpty {
         case true:
             filteredContacts = allContacts
-
         case false:
-            filteredContacts = allContacts.map { contactsForSection in
-                contactsForSection.filter { contact in
-                    let nameString = "\(contact.firstName) \(contact.lastName)"
-                    guard let searchString = contactsView.searchController.searchBar.text else { return false }
-                    return nameString.lowercased().contains(searchString.lowercased())
-                }
-            }
+            filteredContacts = getFilteredContacts()
         }
         
+        contactsView.contactsTableView.shouldDisplayEmptyMessage(if: filteredContacts.isEmpty, message: "No contacts to display.")
         updateContactListSectionHeaders()
         contactsView.contactsTableView.reloadData()
     }
@@ -97,6 +91,17 @@ class ListContactsVC: UIViewController {
         return alphabeticalSubArrays
     }
     
+    
+    //MARK: Get Filtered Contacts
+    private func getFilteredContacts() -> [[Contact]] {
+        return allContacts.map { contactsForSection in
+            contactsForSection.filter { contact in
+                let nameString = "\(contact.firstName) \(contact.lastName)"
+                guard let searchString = contactsView.searchController.searchBar.text else { return false }
+                return nameString.lowercased().contains(searchString.lowercased())
+            }
+        }
+    }
     
     //MARK: Update Section Headers
     private func updateContactListSectionHeaders() {

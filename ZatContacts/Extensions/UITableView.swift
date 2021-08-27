@@ -17,7 +17,7 @@ extension UITableView {
     
     
     //MARK: Set Empty Message
-    func setEmptyMessage(_ message: String) {
+    private func setEmptyMessage(_ message: String) {
         let emptyMessage = ZCLabel(style: .body, weight: .medium, alignment: .center, fontColor: ThemeColor.accentColor, lblText: message)
         emptyMessage.sizeToFit()
         
