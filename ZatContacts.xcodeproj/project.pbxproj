@@ -43,18 +43,10 @@
 		1EF1F69E26D845D500526691 /* UpdateContactVCProgrammatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1F69D26D845D500526691 /* UpdateContactVCProgrammatic.swift */; };
 		1EF1F6A026D882FC00526691 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1F69F26D882FC00526691 /* UITableView.swift */; };
 		295AA7F26E9815811C5346AC /* Pods_ZatContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5A3D4F1A593B623DBBF634 /* Pods_ZatContacts.framework */; };
-		A5AF9893A632647698313CCF /* Pods_ZatContacts_ZatContactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62659B2443A90205B0DF2DB7 /* Pods_ZatContacts_ZatContactsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		1E0BE9F326D47BA200F0E518 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1E0BE9D426D47BA100F0E518 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E0BE9DB26D47BA100F0E518;
-			remoteInfo = ZatContacts;
-		};
-		1E0BE9FE26D47BA200F0E518 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E0BE9D426D47BA100F0E518 /* Project object */;
 			proxyType = 1;
@@ -79,7 +71,6 @@
 		1E0BE9ED26D47BA200F0E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E0BE9F226D47BA200F0E518 /* ZatContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E0BE9F826D47BA200F0E518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E0BE9FD26D47BA200F0E518 /* ZatContactsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZatContactsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3A495B26D47CFF000430CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E54043C26D48CD600801463 /* ListContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContactsView.swift; sourceTree = "<group>"; };
 		1E54043E26D494CF00801463 /* ContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
@@ -131,14 +122,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1E0BE9FA26D47BA200F0E518 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A5AF9893A632647698313CCF /* Pods_ZatContacts_ZatContactsUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -176,7 +159,6 @@
 			children = (
 				1E0BE9DC26D47BA100F0E518 /* ZatContacts.app */,
 				1E0BE9F226D47BA200F0E518 /* ZatContactsTests.xctest */,
-				1E0BE9FD26D47BA200F0E518 /* ZatContactsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -477,26 +459,6 @@
 			productReference = 1E0BE9F226D47BA200F0E518 /* ZatContactsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1E0BE9FC26D47BA200F0E518 /* ZatContactsUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1E0BEA0C26D47BA200F0E518 /* Build configuration list for PBXNativeTarget "ZatContactsUITests" */;
-			buildPhases = (
-				4BF005BB625CF2E7DDF0A72B /* [CP] Check Pods Manifest.lock */,
-				1E0BE9F926D47BA200F0E518 /* Sources */,
-				1E0BE9FA26D47BA200F0E518 /* Frameworks */,
-				1E0BE9FB26D47BA200F0E518 /* Resources */,
-				A5B3E8664D6044EA8798128B /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1E0BE9FF26D47BA200F0E518 /* PBXTargetDependency */,
-			);
-			name = ZatContactsUITests;
-			productName = ZatContactsUITests;
-			productReference = 1E0BE9FD26D47BA200F0E518 /* ZatContactsUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -510,10 +472,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					1E0BE9F126D47BA200F0E518 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = 1E0BE9DB26D47BA100F0E518;
-					};
-					1E0BE9FC26D47BA200F0E518 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = 1E0BE9DB26D47BA100F0E518;
 					};
@@ -534,7 +492,6 @@
 			targets = (
 				1E0BE9DB26D47BA100F0E518 /* ZatContacts */,
 				1E0BE9F126D47BA200F0E518 /* ZatContactsTests */,
-				1E0BE9FC26D47BA200F0E518 /* ZatContactsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -552,13 +509,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1E0BE9F026D47BA200F0E518 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1E0BE9FB26D47BA200F0E518 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -588,45 +538,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4BF005BB625CF2E7DDF0A72B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ZatContacts-ZatContactsUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A5B3E8664D6044EA8798128B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZatContacts-ZatContactsUITests/Pods-ZatContacts-ZatContactsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C88804172BB8FAEC9A63BAB5 /* [CP] Check Pods Manifest.lock */ = {
@@ -715,13 +626,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1E0BE9F926D47BA200F0E518 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -729,11 +633,6 @@
 			isa = PBXTargetDependency;
 			target = 1E0BE9DB26D47BA100F0E518 /* ZatContacts */;
 			targetProxy = 1E0BE9F326D47BA200F0E518 /* PBXContainerItemProxy */;
-		};
-		1E0BE9FF26D47BA200F0E518 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1E0BE9DB26D47BA100F0E518 /* ZatContacts */;
-			targetProxy = 1E0BE9FE26D47BA200F0E518 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -951,48 +850,6 @@
 			};
 			name = Release;
 		};
-		1E0BEA0D26D47BA200F0E518 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEA84F60B6364ACB0FA667BC /* Pods-ZatContacts-ZatContactsUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QL2BBMJJN;
-				INFOPLIST_FILE = ZatContactsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexandercooper.ZatContactsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ZatContacts;
-			};
-			name = Debug;
-		};
-		1E0BEA0E26D47BA200F0E518 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED726D1137071CCF554F790F /* Pods-ZatContacts-ZatContactsUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7QL2BBMJJN;
-				INFOPLIST_FILE = ZatContactsUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.alexandercooper.ZatContactsUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ZatContacts;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1019,15 +876,6 @@
 			buildConfigurations = (
 				1E0BEA0A26D47BA200F0E518 /* Debug */,
 				1E0BEA0B26D47BA200F0E518 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1E0BEA0C26D47BA200F0E518 /* Build configuration list for PBXNativeTarget "ZatContactsUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1E0BEA0D26D47BA200F0E518 /* Debug */,
-				1E0BEA0E26D47BA200F0E518 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
