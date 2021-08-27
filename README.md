@@ -27,6 +27,11 @@ ZatContact is a simple 'Contacts Book' app, allowing a user to manage contact in
 ## Screenshots
 ![Screenshot1][100]
 
+
+### Known Issues
+* Compact style UIDatePicker throws auto layout constraint errors but seems to layout and function correctly. 
+* Phone Number TextField - `Can't find keyplane that supports type 5 for keyboard`
+
 <!-- Image References -->
 [100]: https://i.imgur.com/Alg7YTF.png "Screenshot 1"
 
