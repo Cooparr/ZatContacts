@@ -2,10 +2,11 @@
 
 # How to Run Project
 * Download ZIP.
-* Run 'pod install' from terminal within project diretory. 
-* Open `ZatContacts.xcworkspace` 
-* Create New Scheme
-* Build & Run
+* Run `pod install` from terminal within project diretory. 
+* Open `ZatContacts.xcworkspace`.
+* Create New Scheme.
+* Select Device.
+* Build & Run.
 
 </br>
 
