@@ -32,7 +32,12 @@ class ListContactsView: UIView {
         super.init(frame: .zero)
         
         addSubview(contactsTableView)
-        contactsTableView.pinSubview(to: self)
+        NSLayoutConstraint.activate([
+            contactsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            contactsTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            contactsTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            contactsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+        ])
     }
     
     
