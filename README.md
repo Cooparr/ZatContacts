@@ -1,6 +1,6 @@
 # ZatContacts
 
-# How to Run Project
+## How to Run Project
 * Download ZIP.
 * Run `pod install` from terminal within project diretory. 
 * Open `ZatContacts.xcworkspace`.
@@ -10,7 +10,7 @@
 
 </br>
 
-# Project Info & Features
+## Project Info & Features
 ZatContact is a simple 'Contacts Book' app, allowing a user to manage contact information, this is handled via Cloud Firestore integration. 
 
 * Firebase Cloud Firestore intergration.
