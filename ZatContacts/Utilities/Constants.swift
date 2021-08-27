@@ -14,6 +14,12 @@ enum NavBarTitles {
     static let updateContact    = "Update Contact"
 }
 
+enum NavBarBtnTitles {
+    static let save     = "Save"
+    static let update   = "Update"
+    static let delete   = "Delete"
+}
+
 
 //MARK: SF Symbol
 enum SFSymbol {

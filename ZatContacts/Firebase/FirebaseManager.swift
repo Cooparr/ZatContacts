@@ -103,13 +103,13 @@ extension FirebaseManager {
     
     //MARK: Firebase Manager Errors
     enum FirebaseManagerError: String, LocalizedError {
-        case unexpectedErrorOccured = "An unexpected error was throw."
-        case failedToGetCurrentUserId = "Error throw when trying to get the current user ID."
-        case failedToGetCollectionRef = "Error was throw when unwraping user's contacts collection reference."
-        case failedToFetchContacts = "Error was throw by firebase when trying to fetch Contacts."
-        case failedToUnwrapDocuments = "Error was thrown when unnwrapped snapshot document from firebase."
-        case failedToParseData = "Error was thrown when trying to parse data as Contact."
-        case failedToDeleteTeamComp = "Error was throw when trying to delete Team Comp."
+        case unexpectedErrorOccured     = "An unexpected error was throw."
+        case failedToGetCurrentUserId   = "Error throw when trying to get the current user ID."
+        case failedToGetCollectionRef   = "Error was throw when unwraping user's contacts collection reference."
+        case failedToFetchContacts      = "Error was throw by firebase when trying to fetch Contacts."
+        case failedToUnwrapDocuments    = "Error was thrown when unnwrapped snapshot document from firebase."
+        case failedToParseData          = "Error was thrown when trying to parse data as Contact."
+        case failedToDeleteTeamComp     = "Error was throw when trying to delete Team Comp."
         
         
         var errorDescription: String? {

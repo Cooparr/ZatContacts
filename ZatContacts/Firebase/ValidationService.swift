@@ -24,7 +24,7 @@ enum ValidationService {
     static func isValidPhoneNumber(_ phoneNumber: String?) -> Bool {
         let phoneRegEx = "[0-9+]{0,1}[0-9]{5,16}\\b"
         let phonePred = NSPredicate(format: "SELF MATCHES %@", phoneRegEx)
-        return phonePred.evaluate(with: phoneNumber)
+        return phonePred.evaluate(with: phoneNumber?.replacingOccurrences(of: " ", with: ""))
     }
     
     
@@ -41,12 +41,12 @@ enum ValidationService {
     
     //MARK: Validation Errors
     enum ValidationError: String, LocalizedError {
-        case noSalutationProvided = "Please provide a salutation for this contact."
-        case noFirstNameProvided = "Please provide a first name for this contact."
-        case noLastNameProvided = "Please provide a last name for this contact."
-        case noPhoneNumberProvided =  "Please provide a phone number for this contact."
-        case invalidEmail = "Email address provided is invalid."
-        case invalidPhoneNumber = "Phone number provided is invalid."
+        case noSalutationProvided   = "Please provide a salutation for this contact."
+        case noFirstNameProvided    = "Please provide a first name for this contact."
+        case noLastNameProvided     = "Please provide a last name for this contact."
+        case noPhoneNumberProvided  = "Please provide a phone number for this contact."
+        case invalidEmail           = "Email address provided is invalid."
+        case invalidPhoneNumber     = "Phone number provided is invalid."
         
         
         //MARK: Error Description

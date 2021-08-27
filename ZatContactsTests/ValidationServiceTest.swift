@@ -10,7 +10,7 @@ import XCTest
 
 class ValidationServiceTests: XCTestCase {
     
-    //MARK:- Email Tests
+    //MARK:- Test Valid Emails
     func testValidEmails() {
         // Given
         let charLength32 = "validEmailvalidEmailvalidEmailva"
@@ -28,7 +28,8 @@ class ValidationServiceTests: XCTestCase {
             "validEmail@" + charLength64 + ".com",
             charLength64 + "@gmail.com",
             "validEmail@hotmail." + charLength32,
-            "valid+Email.valid_Email-valid%" + "@outlook.com"
+            "valid+Email.valid_Email-valid%" + "@outlook.com",
+            charLength64 + "@" + charLength64 + "." + charLength32 + "." + charLength32
         ]
         
         
@@ -44,6 +45,7 @@ class ValidationServiceTests: XCTestCase {
     }
     
     
+    //MARK: Test Invalid Emails
     func testInvalidEmails() {
         // Given
         let charLength34 = "invalidEmailinvalidEmailinvalidEma"
@@ -82,11 +84,48 @@ class ValidationServiceTests: XCTestCase {
     }
     
     
-    
-    //MARK: Phone Number Tests
+    //MARK:- Test Valid Phone Number
     func testValidPhoneNumber() {
+        let validPhoneNumbers = [
+            "07700900843",
+            "07700 900 843",
+            "+447700 900 843"
+        ]
         
+        for (index, validNumber) in validPhoneNumbers.enumerated() {
+            // When
+            let result = ValidationService.isValidPhoneNumber(validNumber)
+            
+            // Then
+            XCTAssertTrue(result, "\(validPhoneNumbers[index]): Asserted to False, Index \(index)")
+        }
     }
     
     
+    //MARK: Test Invalid Phone Numbers
+    func testInvalidPhoneNumber() {
+        let numberToShort = "+1234"
+        let numberToLong = "43543534535423535j"
+        print(numberToLong.count)
+        let invalidPhoneNumbers = [
+            "rehjeyteuewtrey",
+            "++7700 900 843",
+            "0+7700 900 843",
+            "-7700 900 843",
+            "*7700 900 843",
+            "#7700 900 843",
+            numberToLong,
+            numberToShort
+        ]
+        
+        for (index, invalidNumber) in invalidPhoneNumbers.enumerated() {
+            // When
+            let result = ValidationService.isValidPhoneNumber(invalidNumber)
+            
+            // Then
+            XCTAssertEqual(numberToShort.count, 5)
+            XCTAssertEqual(numberToLong.count, 18)
+            XCTAssertFalse(result, "\(invalidPhoneNumbers[index]): Asserted to True, Index \(index)")
+        }
+    }
 }

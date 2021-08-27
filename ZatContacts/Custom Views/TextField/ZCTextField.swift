@@ -13,6 +13,7 @@ class ZCTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
+        clearButtonMode = .whileEditing
     }
     
     

@@ -40,6 +40,8 @@
 		1EF145BB26D66C73005B36B3 /* ZCContactInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145BA26D66C73005B36B3 /* ZCContactInfoCard.swift */; };
 		1EF145C726D6CA29005B36B3 /* ValidationServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145C626D6CA29005B36B3 /* ValidationServiceTest.swift */; };
 		1EF145CC26D74109005B36B3 /* ZCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF145CB26D74109005B36B3 /* ZCLabel.swift */; };
+		1EF1F69E26D845D500526691 /* UpdateContactVCProgrammatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1F69D26D845D500526691 /* UpdateContactVCProgrammatic.swift */; };
+		1EF1F6A026D882FC00526691 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1F69F26D882FC00526691 /* UITableView.swift */; };
 		295AA7F26E9815811C5346AC /* Pods_ZatContacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE5A3D4F1A593B623DBBF634 /* Pods_ZatContacts.framework */; };
 		A5AF9893A632647698313CCF /* Pods_ZatContacts_ZatContactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62659B2443A90205B0DF2DB7 /* Pods_ZatContacts_ZatContactsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -101,6 +103,8 @@
 		1EF145BA26D66C73005B36B3 /* ZCContactInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCContactInfoCard.swift; sourceTree = "<group>"; };
 		1EF145C626D6CA29005B36B3 /* ValidationServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTest.swift; sourceTree = "<group>"; };
 		1EF145CB26D74109005B36B3 /* ZCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCLabel.swift; sourceTree = "<group>"; };
+		1EF1F69D26D845D500526691 /* UpdateContactVCProgrammatic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContactVCProgrammatic.swift; sourceTree = "<group>"; };
+		1EF1F69F26D882FC00526691 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		62659B2443A90205B0DF2DB7 /* Pods_ZatContacts_ZatContactsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZatContacts_ZatContactsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AB07F6D69B54993FFD5C8BA /* Pods-ZatContactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContactsTests.debug.xcconfig"; path = "Target Support Files/Pods-ZatContactsTests/Pods-ZatContactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9757DE7B8C1E9EAE626C039A /* Pods-ZatContacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZatContacts.debug.xcconfig"; path = "Target Support Files/Pods-ZatContacts/Pods-ZatContacts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				1EB3FB1F26D83770001659BC /* AddContactVCProgrammatic.swift */,
+				1EF1F69D26D845D500526691 /* UpdateContactVCProgrammatic.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				1EF145A726D5E754005B36B3 /* UIViewController.swift */,
 				1EF145AC26D5E925005B36B3 /* UIView.swift */,
 				1EF145B626D5EBAD005B36B3 /* UIFont.swift */,
+				1EF1F69F26D882FC00526691 /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,8 +329,8 @@
 		1EF145BC26D66CCF005B36B3 /* List Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				1EF145C326D66DB8005B36B3 /* Controllers */,
 				1EF145C226D66DB3005B36B3 /* Views */,
+				1EF145C326D66DB8005B36B3 /* Controllers */,
 			);
 			path = "List Contacts";
 			sourceTree = "<group>";
@@ -675,6 +681,7 @@
 				1EF145B226D5E9B0005B36B3 /* ZCAlertContainerView.swift in Sources */,
 				1EF145AA26D5E89D005B36B3 /* ZCButton.swift in Sources */,
 				1E0867E526D507E8002F43FE /* Constants.swift in Sources */,
+				1EF1F69E26D845D500526691 /* UpdateContactVCProgrammatic.swift in Sources */,
 				1EB3FB2826D83876001659BC /* AddContactProgrammaticView.swift in Sources */,
 				1EF145CC26D74109005B36B3 /* ZCLabel.swift in Sources */,
 				1EB3FB2B26D83CDA001659BC /* ZCTextFieldCell.swift in Sources */,
@@ -690,6 +697,7 @@
 				1EF145A526D5CB69005B36B3 /* ValidationService.swift in Sources */,
 				1EF145AD26D5E925005B36B3 /* UIView.swift in Sources */,
 				1E54043D26D48CD600801463 /* ListContactsView.swift in Sources */,
+				1EF1F6A026D882FC00526691 /* UITableView.swift in Sources */,
 				1EF145BB26D66C73005B36B3 /* ZCContactInfoCard.swift in Sources */,
 				1EB3FB2F26D83DC1001659BC /* ZCBirthdayCell.swift in Sources */,
 				1E0BE9E226D47BA100F0E518 /* SceneDelegate.swift in Sources */,

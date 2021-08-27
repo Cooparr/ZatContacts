@@ -11,14 +11,13 @@ class AddContactVCProgrammatic: UIViewController {
     
     //MARK: Properties
     private(set) var selectedDateOfBirth: Date?
-    private let addContactView = AddContactProgrammaticView()
+    let addContactView = AddContactProgrammaticView()
     
     
     //MARK: Load View
     override func loadView() {
         super.loadView()
         self.view = addContactView
-        
     }
     
     
@@ -27,16 +26,17 @@ class AddContactVCProgrammatic: UIViewController {
         super.viewDidLoad()
         setupVC()
         setupNavBar()
+        assignDelegates()
+        addKeyboardObservers()
     }
     
     
     //MARK: Setup VC
     private func setupVC() {
-        addContactView.tableView.delegate = self
-        addContactView.tableView.dataSource = self
-        
-        addContactView.salutationCell.salutationSegmentControl.addTarget(self, action: #selector(salutationValueChanged), for: .valueChanged)
         addContactView.birthdayCell.birthdayPicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+        
+        let dismissKeyboardGesture = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        addContactView.addGestureRecognizer(dismissKeyboardGesture)
     }
     
     
@@ -44,25 +44,39 @@ class AddContactVCProgrammatic: UIViewController {
     func setupNavBar() {
         navigationItem.title = NavBarTitles.addContact
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveNewContact))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NavBarBtnTitles.save, style: .done, target: self, action: #selector(saveNewContact))
+    }
+    
+    
+    //MARK: Assign Delegates
+    private func assignDelegates() {
+        addContactView.tableView.delegate = self
+        addContactView.tableView.dataSource = self
+        
+        addContactView.formSections.forEach { formSection in
+            formSection.cells.forEach { staticCell in
+                guard let textFieldCell = staticCell as? ZCTextFieldCell else { return }
+                textFieldCell.textField.delegate = self
+            }
+        }
     }
     
     
     //MARK: Create Contact
-    private func createContact(uuid: UUID = UUID()) -> Contact? {
+    func createContact(uuid: UUID = UUID()) -> Contact? {
         let salutationSelector = addContactView.salutationCell.salutationSegmentControl
         
         guard
-            let salutation = salutationSelector.titleForSegment(at: salutationSelector.selectedSegmentIndex),
-            let firstName = addContactView.firstNameCell.textField.text,
-            let lastName = addContactView.lastNameCell.textField.text,
-            let phoneNumber = addContactView.phoneNumberCell.textField.text?.replacingOccurrences(of: " ", with: "")
+            let salutation  = salutationSelector.titleForSegment(at: salutationSelector.selectedSegmentIndex),
+            let firstName   = addContactView.firstNameCell.textField.text,
+            let lastName    = addContactView.lastNameCell.textField.text,
+            let phoneNumber = addContactView.phoneNumberCell.textField.text
             else { return nil }
         
-        let middleName = addContactView.middleNameCell.textField.text
-        let emailAddress = addContactView.emailAddressCell.textField.text
-        let dateOfBirth = selectedDateOfBirth
-        let contactAddress = createAddressForContact()
+        let middleName      = addContactView.middleNameCell.textField.text
+        let emailAddress    = addContactView.emailAddressCell.textField.text
+        let dateOfBirth     = selectedDateOfBirth
+        let contactAddress  = createAddressForContact()
         
         return Contact(uuid: uuid, salutation: salutation, firstName: firstName, middleName: middleName, lastName: lastName, dateOfBirth: dateOfBirth, address: contactAddress, phoneNumber: phoneNumber, email: emailAddress)
     }
@@ -70,11 +84,20 @@ class AddContactVCProgrammatic: UIViewController {
     
     //MARK: Create Address For Contact
     private func createAddressForContact() -> Address? {
-        let streetOne = addContactView.streetLineOneCell.textField.text
-        let streetTwo = addContactView.streetLineTwoCell.textField.text
-        let city = addContactView.cityCell.textField.text
-        let postcode = addContactView.postcodeCell.textField.text
+        let streetOne   = addContactView.streetLineOneCell.textField.text
+        let streetTwo   = addContactView.streetLineTwoCell.textField.text
+        let city        = addContactView.cityCell.textField.text
+        let postcode    = addContactView.postcodeCell.textField.text
         return Address(streetOne: streetOne, streetTwo: streetTwo, city: city, postcode: postcode)
+    }
+    
+    
+    //MARK: Add Keyboard Observers
+    private func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -86,23 +109,33 @@ class AddContactVCProgrammatic: UIViewController {
             case .success:
                 self.dismiss(animated: true)
             case .failure(let error):
-                self.presentErrorAlertOnMainThread(title: "Error Saving", message: error.localizedDescription, buttonTitle: "Ok")
+                self.presentErrorAlertOnMainThread(title: "Error Saving", message: error.localizedDescription)
             }
         }
     }
     
     
-    @objc func salutationValueChanged(_ sender: UISegmentedControl) {
-        print("Selected Segment Index is : \(sender.selectedSegmentIndex)")
-    }
-    
+    //MARK: Date Picker Changed
     @objc func datePickerChanged(picker: UIDatePicker) {
         selectedDateOfBirth = picker.date
     }
     
-    //MARK: Cancel Tapped (IBAction)
+    
+    //MARK: Cancel Tapped
     @objc func cancelButtonTapped(_ sender: Any) {
         self.dismiss(animated: true)
+    }
+    
+    
+    //MARK: Keyboard Show / Hide
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            addContactView.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height + addContactView.tableView.rowHeight, right: 0)
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        addContactView.tableView.contentInset = .zero
     }
 }
 
@@ -132,6 +165,32 @@ extension AddContactVCProgrammatic: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-
-
-
+extension AddContactVCProgrammatic: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+        return updatedText.count <= getMaxCharValue(for: textField)
+    }
+    
+    
+    private func getMaxCharValue(for textField: UITextField) -> Int {
+        switch textField {
+        case addContactView.firstNameCell.textField,
+             addContactView.middleNameCell.textField,
+             addContactView.lastNameCell.textField,
+             addContactView.phoneNumberCell.textField,
+             addContactView.streetLineOneCell.textField,
+             addContactView.streetLineTwoCell.textField,
+             addContactView.cityCell.textField:
+            return 30
+        case addContactView.emailAddressCell.textField:
+            return 200
+        case addContactView.postcodeCell.textField:
+            return 10
+        default:
+            print("Unrecognised textfield, setting limit to a default value")
+            return 100
+        }
+    }
+}

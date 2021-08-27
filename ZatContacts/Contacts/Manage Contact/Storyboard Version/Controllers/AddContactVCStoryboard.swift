@@ -24,7 +24,7 @@ class AddContactVCStoryboard: UITableViewController {
     
     
     //MARK: Properties
-    static let identifier = "AddContactForm"
+//    static let identifier = "AddContactForm"
     private(set) var selectedDateOfBirth: Date?
     var contactToUpdate: Contact?
 
@@ -42,13 +42,13 @@ class AddContactVCStoryboard: UITableViewController {
         setRequiredFieldsPlaceholderColor()
         guard let contact = contactToUpdate else {
             navigationItem.title = NavBarTitles.addContact
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveNewContact))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: NavBarBtnTitles.save, style: .done, target: self, action: #selector(saveNewContact))
             return
         }
         
         fillForm(withExisting: contact)
         navigationItem.title = NavBarTitles.updateContact
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Update", style: .done, target: self, action: #selector(updateExistingContact))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: NavBarBtnTitles.update, style: .done, target: self, action: #selector(updateExistingContact))
     }
     
     
@@ -74,7 +74,7 @@ class AddContactVCStoryboard: UITableViewController {
             let salutation = salutationSegCont.titleForSegment(at: salutationSegCont.selectedSegmentIndex),
             let firstName = firstNameTextField.text,
             let lastName = lastNameTextField.text,
-            let phoneNumber = phoneTextField.text?.replacingOccurrences(of: " ", with: "")
+            let phoneNumber = phoneTextField.text
             else { return nil }
         
         let middleName = middleNameTextField.text
@@ -124,7 +124,7 @@ class AddContactVCStoryboard: UITableViewController {
             case .success:
                 self.dismiss(animated: true)
             case .failure(let error):
-                self.presentErrorAlertOnMainThread(title: "Error Saving", message: error.localizedDescription, buttonTitle: "Ok")
+                self.presentErrorAlertOnMainThread(title: "Error Saving", message: error.localizedDescription)
             }
         }
     }
@@ -139,7 +139,7 @@ class AddContactVCStoryboard: UITableViewController {
             case .success:
                 self.dismiss(animated: true)
             case .failure(let error):
-                self.presentErrorAlertOnMainThread(title: "Update Error", message: error.localizedDescription, buttonTitle: "Ok")
+                self.presentErrorAlertOnMainThread(title: "Update Error", message: error.localizedDescription)
             }
         }
     }

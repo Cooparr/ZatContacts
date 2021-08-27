@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MapKit
 
 class DetailedContactView: UIView {
     
@@ -17,7 +16,6 @@ class DetailedContactView: UIView {
     let addressCard = ZCContactInfoCard(dataType: .address)
     let birthdayCard = ZCContactInfoCard()
     let callContactButton = ZCButton(heightConstant: 50)
-//    let contactMap = MKMapView()
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()

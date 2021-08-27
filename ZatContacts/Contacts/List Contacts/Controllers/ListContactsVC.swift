@@ -11,9 +11,10 @@ class ListContactsVC: UIViewController {
     
     //MARK:- Properites
     private let contactsView = ListContactsView()
-    private var contactsDatasource = [[Contact]]()
-    private var sectionHeaders = [String]()
-
+    private var sectionHeaders = [String?]()
+    private var allContacts = [[Contact]]()
+    private var filteredContacts = [[Contact]]()
+    
     
     //MARK:- Load View
     override func loadView() {
@@ -34,6 +35,7 @@ class ListContactsVC: UIViewController {
     //MARK:- Setup NavBar
     private func setupNavBar() {
         navigationItem.title = NavBarTitles.contacts
+        navigationItem.searchController = contactsView.searchController
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: SFSymbol.addContact, style: .plain, target: self, action: #selector(addContactTapped))
     }
@@ -43,6 +45,7 @@ class ListContactsVC: UIViewController {
     private func assignDelegates() {
         contactsView.contactsTableView.delegate = self
         contactsView.contactsTableView.dataSource = self
+        contactsView.searchController.searchResultsUpdater = self
     }
     
     
@@ -52,45 +55,64 @@ class ListContactsVC: UIViewController {
             guard let self = self else { return }
             switch result {
             case .success(let contacts):
-                self.contactsDatasource = self.splitContactsIntoAlphabeticalSubArrays(fetchedContacts: contacts)
-                self.updateContactListSectionHeaders()
-                self.contactsView.contactsTableView.reloadData()
+                self.allContacts = self.splitContactsIntoAlphabeticalSubArrays(fetchedContacts: contacts)
+                self.updateTableView()
                 
             case .failure(let error):
-                self.presentErrorAlertOnMainThread(title: "Fetch Error", message: error.localizedDescription, buttonTitle: "Ok")
+                self.presentErrorAlertOnMainThread(title: "Fetch Error", message: error.localizedDescription)
             }
         }
     }
     
     
+    //MARK: Update Table View
+    private func updateTableView() {
+        guard let searchText = contactsView.searchController.searchBar.text else { return }
+        
+        switch searchText.isEmpty {
+        case true:
+            filteredContacts = allContacts
+
+        case false:
+            filteredContacts = allContacts.map { contactsForSection in
+                contactsForSection.filter { contact in
+                    let nameString = "\(contact.firstName) \(contact.lastName)"
+                    guard let searchString = contactsView.searchController.searchBar.text else { return false }
+                    return nameString.lowercased().contains(searchString.lowercased())
+                }
+            }
+        }
+        
+        updateContactListSectionHeaders()
+        contactsView.contactsTableView.reloadData()
+    }
+    
+    
     //MARK: Create Alphabetical Sub Arrays
     private func splitContactsIntoAlphabeticalSubArrays(fetchedContacts: [Contact]) -> [[Contact]] {
-        let alphabeticalSubArryas = Array(
-            Dictionary(grouping: fetchedContacts) {
-                $0.lastName.lowercased().prefix(1)
-            }.values).sorted { lhs, rhs in
-                return lhs[0].lastName < rhs[0].lastName
-            }
-        
-        return alphabeticalSubArryas
+        let alphabeticalSubArrays = Array(Dictionary(grouping: fetchedContacts) { $0.lastName.lowercased().first }.values)
+            .sorted { lhs, rhs in
+            return lhs[0].lastName < rhs[0].lastName
+        }
+        return alphabeticalSubArrays
     }
     
     
     //MARK: Update Section Headers
     private func updateContactListSectionHeaders() {
-        sectionHeaders.removeAll()
-        contactsDatasource.forEach { contactSection in
-            guard let firstCharOfLastName = contactSection.first?.lastName.prefix(1) else { return }
-            let character = String(firstCharOfLastName).uppercased()
-            sectionHeaders.append(character)
+        sectionHeaders = allContacts.compactMap { contactsForSection in
+            guard let firstChar = contactsForSection.first?.lastName.first else { return nil }
+            return String(firstChar)
         }
     }
     
     
     //MARK:- Add Contact Action
     @objc func addContactTapped() {
+        #warning("Storyboard or Programmatic Version")
+//        let addContactVC = UIStoryboard(name: "AddContactForm", bundle: nil).instantiateViewController(withIdentifier: "ContactForm")
         let addContactVC = UINavigationController(rootViewController: AddContactVCProgrammatic())
-//        let addContactVC = UIStoryboard(name: AddContactVCStoryboard.identifier, bundle: nil).instantiateViewController(withIdentifier: AddContactVCStoryboard.identifier)
+        
         navigationController?.present(addContactVC, animated: true)
     }
 }
@@ -100,32 +122,42 @@ class ListContactsVC: UIViewController {
 extension ListContactsVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return contactsDatasource.count
+        return filteredContacts.count
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactsDatasource[section].count
+        return filteredContacts[section].count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ContactsCell.cellId, for: indexPath) as? ContactsCell else { return UITableViewCell() }
-        cell.configureCell(with: contactsDatasource[indexPath.section][indexPath.row])
+        cell.configureCell(with: filteredContacts[indexPath.section][indexPath.row])
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let selectedContact = contactsDatasource[indexPath.section][indexPath.row]
+        let selectedContact = filteredContacts[indexPath.section][indexPath.row]
         let detailContactVC = DetailedContactVC(contact: selectedContact)
         navigationController?.pushViewController(detailContactVC, animated: true)
     }
     
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if tableView.numberOfRows(inSection: section) == 0 { return 0 }
+        return 25
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionHeaders[section]
+    }
+    
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
     }
     
     
@@ -142,13 +174,14 @@ extension ListContactsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 
-//MARK: Delete & Update Swipe Actions
 extension ListContactsVC {
+    
+    //MARK: Delete Action
     private func handleDeleteAction(for tableView: UITableView, _ indexPath: IndexPath) -> UIContextualAction {
-        return UIContextualAction(style: .destructive, title: "Delete") { [weak self] _, _, isComplete in
-            guard let self = self else { return }
-            let contactToDelete = self.contactsDatasource[indexPath.section][indexPath.row]
-            self.contactsDatasource[indexPath.section].remove(at: indexPath.row)
+        return UIContextualAction(style: .destructive, title: NavBarBtnTitles.delete) { [weak self] _, _, isComplete in
+            guard let self = self else { return isComplete(false) }
+            let contactToDelete = self.filteredContacts[indexPath.section][indexPath.row]
+            self.filteredContacts[indexPath.section].remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
             
@@ -157,7 +190,7 @@ extension ListContactsVC {
                 case .success:
                     isComplete(true)
                 case .failure(let error):
-                    self.presentErrorAlertOnMainThread(title: "Error Deleting", message: error.localizedDescription, buttonTitle: "Ok")
+                    self.presentErrorAlertOnMainThread(title: "Error Deleting", message: error.localizedDescription)
                     isComplete(false)
                 }
             }
@@ -165,17 +198,29 @@ extension ListContactsVC {
     }
     
     
+    //MARK: Update Action
     private func handleUpdateAction(_ indexPath: IndexPath) -> UIContextualAction {
-        return UIContextualAction(style: .normal, title: "Update") { [weak self] _, _, isComplete in
-            guard let self = self else { return }
-
-            let updateStoryboard = UIStoryboard(name: AddContactVCStoryboard.identifier, bundle: nil)
-            guard let updateContactVC = updateStoryboard.instantiateViewController(withIdentifier: "AddContactFormV2") as? AddContactVCStoryboard else { return }
+        return UIContextualAction(style: .normal, title: NavBarBtnTitles.update) { [weak self] _, _, isComplete in
+            guard let self = self else { return isComplete(false) }
+            let contactToUpdate = self.filteredContacts[indexPath.section][indexPath.row]
+            
+            #warning("Storyboard or Programmatic Version")
+//            let updateStoryboard = UIStoryboard(name: "AddContactForm", bundle: nil)
+//            guard let updateContactVC = updateStoryboard.instantiateViewController(withIdentifier: "ContactForm") as? AddContactVCStoryboard else { return }
+//            updateContactVC.contactToUpdate = contactToUpdate
+            let updateContactVC = UpdateContactVCProgrammatic(contactToUpdate: contactToUpdate)
             
             let navCont = UINavigationController(rootViewController: updateContactVC)
-            updateContactVC.contactToUpdate = self.contactsDatasource[indexPath.section][indexPath.row]
             self.present(navCont, animated: true)
             isComplete(true)
         }
+    }
+}
+
+
+//MARK: UI Search Results Updating Delegate
+extension ListContactsVC: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        updateTableView()
     }
 }

@@ -21,12 +21,13 @@ class ZCTextFieldCell: ZCStaticCell {
     
     
     //MARK: Init
-    init(placeholder: String, contentType: UITextContentType, keyboardType: UIKeyboardType = .default, isRequiredField: Bool = false) {
+    init(placeholder: String, contentType: UITextContentType, keyboardType: UIKeyboardType = .default, isRequiredField: Bool = false, capitalizeType:  UITextAutocapitalizationType = .words) {
         super.init(style: .default, reuseIdentifier: ZCStaticCell.reuseId)
         
         textField.placeholder = placeholder
         textField.textContentType = contentType
         textField.keyboardType = keyboardType
+        textField.autocapitalizationType = capitalizeType
         
         if isRequiredField {
             let attributedString = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: ThemeColor.accentColor])
@@ -46,6 +47,12 @@ class ZCTextFieldCell: ZCStaticCell {
             textField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             textField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+    
+    
+    //MARK: Set TextField To
+    func setTextField(to string: String?) {
+        textField.text = string
     }
     
     

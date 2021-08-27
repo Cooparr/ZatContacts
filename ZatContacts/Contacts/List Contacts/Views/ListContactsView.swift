@@ -19,10 +19,18 @@ class ListContactsView: UIView {
         return tableView
     }()
     
+    let searchController: UISearchController = {
+        let searchBar = UISearchController()
+        searchBar.obscuresBackgroundDuringPresentation = false
+        searchBar.searchBar.placeholder = "Search for a contact."
+        return searchBar
+    }()
+    
     
     //MARK: Init
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        
         addSubview(contactsTableView)
         contactsTableView.pinSubview(to: self)
     }

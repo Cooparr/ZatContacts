@@ -9,7 +9,7 @@ import Foundation
 import Contacts
 
 //MARK:- Contact
-struct Contact: Codable, Equatable {
+struct Contact: Codable {
     var uuid           = UUID()
     let salutation     : String
     var firstName      : String
@@ -30,7 +30,7 @@ struct Contact: Codable, Equatable {
     //MARK: Full Name
     var fullName: String {
         guard let middleName = self.middleName, !middleName.isEmpty else {
-            return "\(firstName) \(lastName)"
+            return "\(salutation) \(firstName) \(lastName)"
         }
         
         return "\(salutation) \(firstName) \(middleName) \(lastName)"

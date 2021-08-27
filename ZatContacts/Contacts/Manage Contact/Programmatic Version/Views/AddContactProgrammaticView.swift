@@ -41,15 +41,16 @@ class AddContactProgrammaticView: UIView {
     let streetLineOneCell   = ZCTextFieldCell(placeholder: "Street Line 1", contentType: .streetAddressLine1)
     let streetLineTwoCell   = ZCTextFieldCell(placeholder: "Street Line 2", contentType: .streetAddressLine2)
     let cityCell            = ZCTextFieldCell(placeholder: "City", contentType: .addressCity)
-    let postcodeCell        = ZCTextFieldCell(placeholder: "Postcode", contentType: .postalCode)
+    let postcodeCell        = ZCTextFieldCell(placeholder: "Postcode", contentType: .postalCode, capitalizeType: .allCharacters)
     
     
     //MARK: Init
     override init(frame: CGRect) {
-        let contactInfoSection      = FormSection(title: "Contact Information", cells: [salutationCell, firstNameCell, middleNameCell, lastNameCell, birthdayCell])
-        let contactDetailSection    = FormSection(title: "Contact Details",cells: [phoneNumberCell, emailAddressCell])
-        let addressSection          = FormSection(title: "Address", cells: [streetLineOneCell, streetLineTwoCell, cityCell, postcodeCell])
-        formSections = [contactInfoSection, contactDetailSection, addressSection]
+        self.formSections = [
+            FormSection(title: "Contact Information", cells: [salutationCell, firstNameCell, middleNameCell, lastNameCell, birthdayCell]),
+            FormSection(title: "Contact Details",cells: [phoneNumberCell, emailAddressCell]),
+            FormSection(title: "Address", cells: [streetLineOneCell, streetLineTwoCell, cityCell, postcodeCell])
+        ]
         
         super.init(frame: .zero)
         backgroundColor = .systemBackground
@@ -74,7 +75,8 @@ class AddContactProgrammaticView: UIView {
     func setupTableFooterView() {
         let footerView = UIView(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
         tableView.tableFooterView = footerView
-        
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: Double.leastNormalMagnitude))
+
         footerView.addSubview(requiredLabel)
         NSLayoutConstraint.activate([
             requiredLabel.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
