@@ -6,6 +6,8 @@
 	<dict>
 		<key>ZatContacts.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>23</integer>
 		</dict>
@@ -18,6 +20,11 @@
 			<true/>
 		</dict>
 		<key>1E0BE9F126D47BA200F0E518</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1EF08D6926DF8E730046F9BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

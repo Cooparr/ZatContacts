@@ -91,6 +91,23 @@ enum FirebaseManager {
             onCompletion(.success(()))
         }
     }
+    
+    
+    //MARK: Fetch Single Contact Data
+    static func fetchSingleContactInfo(contactId: UUID, onCompletion: @escaping (Result<Contact, FirebaseManagerError>) -> Void) {
+        guard let firestoreRef = try? getUsersContactsCollectionReference() else { return onCompletion(.failure(.failedToGetCollectionRef)) }
+        
+        firestoreRef.document(contactId.uuidString).getDocument { docSnapshot, error in
+            let result = Result { try docSnapshot?.data(as: Contact.self) }
+            switch result {
+            case .success(let contact):
+                guard let contact = contact else { return onCompletion(.failure(.failedToUnwrapDocuments)) }
+                onCompletion(.success(contact))
+            case .failure:
+                onCompletion(.failure(.failedToFetchSingleContact))
+            }
+        }
+    }
 }
 
 extension FirebaseManager {
@@ -107,6 +124,7 @@ extension FirebaseManager {
         case failedToGetCurrentUserId   = "Error throw when trying to get the current user ID."
         case failedToGetCollectionRef   = "Error was throw when unwraping user's contacts collection reference."
         case failedToFetchContacts      = "Error was throw by firebase when trying to fetch Contacts."
+        case failedToFetchSingleContact = "Error was throw when trying to fetch this particular contact."
         case failedToUnwrapDocuments    = "Error was thrown when unnwrapped snapshot document from firebase."
         case failedToParseData          = "Error was thrown when trying to parse data as Contact."
         case failedToDeleteTeamComp     = "Error was throw when trying to delete Team Comp."

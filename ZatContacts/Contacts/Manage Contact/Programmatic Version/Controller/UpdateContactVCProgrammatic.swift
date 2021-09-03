@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol UpdateContactVCDelegate {
+    func updateContactVCDismissed()
+}
+
 class UpdateContactVCProgrammatic: AddContactVCProgrammatic {
     
     //MARK: Properties
     let contactToUpdate: Contact
+    var updateContactDelegate: UpdateContactVCDelegate?
     
     
     //MARK: Init
@@ -60,6 +65,7 @@ class UpdateContactVCProgrammatic: AddContactVCProgrammatic {
         FirebaseManager.updateExistingContact(contactToUpdate: updatedContact) { result in
             switch result {
             case .success:
+                self.updateContactDelegate?.updateContactVCDismissed()
                 self.dismiss(animated: true)
             case .failure(let error):
                 self.presentErrorAlertOnMainThread(title: "Update Error", message: error.localizedDescription)
